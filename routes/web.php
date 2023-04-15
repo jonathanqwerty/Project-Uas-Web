@@ -28,6 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/mahasiswa/list', [MahasiswaController::class, 'list']);
+    Route::get('/mahasiswa/create',[MahasiswaController::class, 'create']);
+    Route::post('/mahasiswa/store',[MahasiswaController::class, 'store']);
+    Route::get('/mahasiswa/{id}/edit',[MahasiswaController::class, 'edit']);
+    Route::put('/mahasiswa/{id}',[MahasiswaController::class, 'update']);
 });
 
 require __DIR__.'/auth.php';
