@@ -21,7 +21,6 @@
                         <td>IPK</td>
                         <td>Jenis Kelamin</td>
                         <td>Kehadiran</td>
-                        <td>AKSI</td>
                     </tr>
                     @foreach ($mahasiswa as $m)
                         <tr>
@@ -31,7 +30,6 @@
                             <td>{{ $m->ipk }}</td>
                             <td>{{ $m->jenis_kelamin }}</td>
                             <td>{{ $m->absensi }}</td>
-                            <td><a href="/mahasiswa/{{ $m->id }}/edit" class="btn btn-warning">Edit</a></td>
                         </tr>
                     @endforeach
 
