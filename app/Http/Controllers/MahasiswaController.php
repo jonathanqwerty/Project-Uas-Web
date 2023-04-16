@@ -38,11 +38,17 @@ class MahasiswaController extends Controller
         return view('mahasiswa.edit', compact(['mahasiswa']));
     }
 
-    public function update($id, Request $request
-    )
+    public function update($id, Request $request)
     {
         $mahasiswa = Mahasiswa::find($id);
         $mahasiswa->update($request->except(['_token','submit']));
         return redirect('/mahasiswa/list');
+    }
+
+    public function userPage()
+    {
+        $mahasiswa = Mahasiswa::all();
+        // dd($mahasiswa);
+        return view('mahasiswa.list',compact(['mahasiswa']));
     }
 }
