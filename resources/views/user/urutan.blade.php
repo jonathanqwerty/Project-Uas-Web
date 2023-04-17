@@ -8,7 +8,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-            <title>Document</title>
+            <title>Daftar Kehadiran</title>
         </head>
 
         <body>
@@ -34,7 +34,6 @@
                     @endforeach
 
                 </table>
-                <a href="/mahasiswa/create" class="btn btn-primary">Tambahkan Mahasiswa</a>
             </div>
         </body>
 
