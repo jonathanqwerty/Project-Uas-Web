@@ -11,7 +11,7 @@ class UserController extends Controller
         return view('userIndex');
     }
 
-    public function listMahasiswa()
+    public function listMatakuliah()
     {
         return view('user.listMatakuliah');
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('jurusan');
             $table->string('ipk');
             $table->enum('jenis_kelamin' , ['L','P']);
-            $table->enum('absensi' , ['Hadir','Tidak Hadir']);
+            $table->enum('absensi' , ['Hadir','Tidak Hadir'])->default('Tidak Hadir');
             $table->timestamps();
         });
     }

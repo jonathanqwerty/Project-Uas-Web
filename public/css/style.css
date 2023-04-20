@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+html {
+    font-family: 'Potta One', cursive;
+    background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.subjudul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.subjudul a {
+    text-decoration: none;
+    color: #ffb703;
+}
+
+.subjudul a:hover {
+    cursor: pointer;
+    color: #fb8500;
+}
+
+.judul h1 {
+    font-size: 5rem;
+}
+
+.judul h2 {
+    font-size: 4rem;
+    margin-bottom: -5rem;
+}
+
+.kiri,
+.kanan {
+    font-size: 2rem;
+}
+
+@media screen and (max-width:800px) {
+    .judul h1 {
+        font-size: 3rem;
+    }
+
+    .judul h2 {
+        font-size: 2rem;
+        margin-bottom: -3rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .judul h1 {
+        font-size: 3rem;
+    }
+
+    .judul h2 {
+        font-size: 2rem;
+        margin-bottom: -3rem;
+    }
+
+    .kiri,
+    .kanan {
+        font-size: 1.3rem;
+        margin: 4px;
+    }
+
+    .subjudul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+    
+}

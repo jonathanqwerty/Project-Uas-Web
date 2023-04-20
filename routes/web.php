@@ -35,6 +35,7 @@ Route::middleware('auth','CekLevel:admin')->group(function () {
     Route::get('/mahasiswa/{id}/edit',[MahasiswaController::class, 'edit']);
     Route::put('/mahasiswa/{id}',[MahasiswaController::class, 'update']);
     Route::get('/user/urutan',[MahasiswaController::class, 'userPage']);
+    Route::get('/user/listMatakuliah',[UserController::class, 'listMatakuliah']);
 });
 
 Route::middleware('auth','CekLevel:user')->group(function () {
