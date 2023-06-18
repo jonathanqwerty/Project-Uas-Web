@@ -28,6 +28,7 @@ class User extends Authenticatable
         'level',
         'email',
         'password',
+        'NIM',
     ];
     
     protected static function boot()

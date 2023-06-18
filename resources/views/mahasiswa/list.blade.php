@@ -1,45 +1,38 @@
 <x-app-layout>
-    <x-slot name="header">
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-            <title>Document</title>
-        </head>
-
-        <body>
-            <div class="py-12">
-                <table class="table">
-                    <tr>
-                        <td>Nama</td>
-                        <td>NIM</td>
-                        <td>Jurusan</td>
-                        <td>IPK</td>
-                        <td>Jenis Kelamin</td>
-                        <td>Kehadiran</td>
-                        <td>AKSI</td>
-                    </tr>
-                    @foreach ($mahasiswa as $m)
+    <script src="https://cdn.tailwindcss.com"></script>
+    <div class="flex flex-col items-center mt-5 px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div class="container justify-center items-center">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-md">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xl text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <td>{{ $m->nama }}</td>
-                            <td>{{ $m->nim }}</td>
-                            <td>{{ $m->jurusan }}</td>
-                            <td>{{ $m->ipk }}</td>
-                            <td>{{ $m->jenis_kelamin }}</td>
-                            <td>{{ $m->absensi }}</td>
-                            <td><a href="/mahasiswa/{{ $m->id }}/edit" class="btn btn-warning">Edit</a></td>
+                            <td>Nama</td>
+                            <td>NIM</td>
+                            <td>Jurusan</td>
+                            <td>IPK</td>
+                            <td>Jenis Kelamin</td>
+                            <td>Kehadiran</td>
+                            <td>AKSI</td>
                         </tr>
-                    @endforeach
-
+                    </thead>
+                    <tbody>
+                        @foreach ($_m__mahasiswa as $m)
+                            <tr>
+                                <td>{{ $m->Nama }}</td>
+                                <td>{{ $m->NIM }}</td>
+                                <td>{{ $m->Jurusan }}</td>
+                                <td>{{ $m->IPK }}</td>
+                                <td>{{ $m->jenis_kelamin }}</td>
+                                <td>{{ $m->absensi }}</td>
+                                <td><a href="/mahasiswa/{{ $m->id }}/edit">Edit</a></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                 </table>
-                <a href="/mahasiswa/create" class="btn btn-primary">Tambahkan Mahasiswa</a>
             </div>
-        </body>
-
-        </html>
-    </x-slot>
+            <button type="button"
+                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-5"><a
+                    href="/mahasiswa/create">Tambahkan Mahasiswa</a></button>
+        </div>
+    </div>
 </x-app-layout>

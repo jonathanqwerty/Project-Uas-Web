@@ -24,10 +24,6 @@
                     <a href="{{ route('login') }}" class="kiri">Log
                         in</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="kanan">Register</a>
-                    @endif
-
                 @endauth
 
             @endif

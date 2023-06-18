@@ -4,17 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
-
-
-class Mahasiswa extends Model
+class Absen extends Model
 {
-
-    public $incrementing = false;
-    protected $keyType = 'string';
-
     use HasFactory;
-    protected $table = '_m__mahasiswa';
+    protected $table = '_tabsen';
     protected $guarded = [];
 }

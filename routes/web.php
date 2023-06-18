@@ -25,6 +25,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
 Route::middleware('auth','CekLevel:admin')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -35,15 +37,17 @@ Route::middleware('auth','CekLevel:admin')->group(function () {
     Route::get('/mahasiswa/{id}/edit',[MahasiswaController::class, 'edit']);
     Route::put('/mahasiswa/{id}',[MahasiswaController::class, 'update']);
     Route::get('/user/urutan',[MahasiswaController::class, 'userPage']);
-    Route::get('/user/listMatakuliah',[UserController::class, 'listMatakuliah']);
 });
 
-Route::middleware('auth','CekLevel:user')->group(function () {
-    Route::get('/userIndex', [UserController::class, 'beranda']);
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::middleware('auth','CekLevel:admin,user')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'editUser'])->name('profile.edit-user');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::put('/mahasiswa/{id}',[MahasiswaController::class, 'update']);
-    Route::get('/user/listMatakuliah',[UserController::class, 'listMatakuliah']);
+    Route::get('listMatakuliah',[UserController::class, 'listMatakuliah']);
+    Route::get('user/absen',[UserController::class, 'absenMahasiswa']);
+    Route::get('/user/absen/{NIM}',[UserController::class, 'absen']);
+    Route::get('user/absen',[UserController::class, 'list']);
+    Route::get('user/listAbsen',[UserController::class, 'listAbsen']);
 });
+
 
 require __DIR__.'/auth.php';
